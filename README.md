@@ -4,15 +4,15 @@ Gaining Bitcoin Transaction information of address by Crawling [Blockchain.com](
 
 ## How to Use
 1. Crawling from Blockchain.com.
-  - Access the [Blockchain.com](https://www.blockchain.com/explorer).
-  - Find address that you want to get transaction information.
-  - Copy the address.
-  - Run crawling_blockchain.py.
+    - Access the [Blockchain.com](https://www.blockchain.com/explorer).
+    - Find address that you want to get transaction information.
+    - Copy the address.
+    - Run crawling_blockchain.py.
   
 2. Using API of Blockchain.com
-  - Find address that you want to get transaction information.
-  - Copy the address.
-  - Run crawling_blockapi.py.
+    - Find address that you want to get transaction information.
+    - Copy the address.
+    - Run crawling_blockapi.py.
 
 ## Requirements
 1. Python 3
