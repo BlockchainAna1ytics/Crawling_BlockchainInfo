@@ -20,5 +20,5 @@ Gaining Bitcoin Transaction information of address by Crawling [Blockchain.com](
 
 ## Notice
 - Second way is much faster than first way but if you send too many request, they may prohibit you from using API for couple of days.
-- If you want to use API without limitation, you have to request for API key(https://api.blockchain.info/customer/signup).
+- If you want to use API without limitation, you have to request for [API key](https://api.blockchain.info/customer/signup).
 - Using Jupyter Notebook or Sublime Text is recommended. (PyCharm may not work with BeautifulSoup)
