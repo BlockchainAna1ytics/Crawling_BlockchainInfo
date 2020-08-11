@@ -10,12 +10,13 @@ from datetime import datetime
 
 class CrawlingBlockApi(object):
 	"""docstring for CrawlingBlockApi"""
-	def __init__(self, address, pages):
+	def __init__(self, address, pages, filename):
 		self.address = address
 		self.pages = pages
+		self.filename = filename
 
 	def get_blockinfo(self):
-		f = open('Upbit_test.csv', 'w', newline= '', encoding='utf-8')
+		f = open(self.filename, 'w', newline= '', encoding='utf-8')
 		wr = csv.writer(f)
 		wr.writerow(['tx', 'block', 'time', 'input_BTC', 'output_BTC', 'inputs', 'outputs'])
 		self.address = self.address +'?&offset' + '=' #입금주소
@@ -83,5 +84,6 @@ class CrawlingBlockApi(object):
 if __name__ == '__main__':
 	address = input('Enter Address: ')
 	page = input('Enter Pages: ')
+	filename = input('Enter the .csv file name: ')
 	a = CrawlingBlockApi(address, page)
 	a.get_blockinfo()
