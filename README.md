@@ -6,13 +6,17 @@ Gaining Bitcoin Transaction information of address by Crawling [Blockchain.com](
 1. Crawling from Blockchain.com.
     - Access the [Blockchain.com](https://www.blockchain.com/explorer).
     - Find address that you want to get transaction information.
-    - Copy the address.
     - Run crawling_blockchain.py.
+    - Enter the address.
+    - Enter pages. 
+    (Pages = number of transactions / 50)
   
 2. Using API of Blockchain.com
     - Find address that you want to get transaction information.
-    - Copy the address.
     - Run crawling_blockapi.py.
+    - Enter the address.
+    - Enter pages.
+    (Pages = number of transactions / 50)
 
 ## Requirements
 1. Python 3
@@ -22,3 +26,4 @@ Gaining Bitcoin Transaction information of address by Crawling [Blockchain.com](
 - Second way is much faster than first way but if you send too many request, they may prohibit you from using API for couple of days.
 - If you want to use API without limitation, you have to request for [API key](https://api.blockchain.info/customer/signup).
 - Using Jupyter Notebook or Sublime Text is recommended. (PyCharm may not work with BeautifulSoup)
+- If key 'addr' is not available in transaction, it will show as ' '.
