@@ -8,7 +8,6 @@ import string
 import decimal
 from datetime import datetime
 
-
 class CrawlingBlockApi(object):
 	"""docstring for CrawlingBlockApi"""
 	def __init__(self, address, pages):
@@ -16,12 +15,12 @@ class CrawlingBlockApi(object):
 		self.pages = pages
 
 	def get_blockinfo(self):
-		f = open('Gopax.csv', 'w', newline= '', encoding='utf-8')
+		f = open('Upbit_test.csv', 'w', newline= '', encoding='utf-8')
 		wr = csv.writer(f)
 		wr.writerow(['tx', 'block', 'time', 'input_BTC', 'output_BTC', 'inputs', 'outputs'])
+		self.address = self.address +'?&offset' + '=' #입금주소
 		for i in range(0, self.pages + 1):
 			url = 'https://blockchain.info/rawaddr/'
-			self.address = self.address +'?&offset' + '=' #입금주소
 			offset = i * 50
 			url = url + self.address + str(offset)
 			print(url)
@@ -43,18 +42,26 @@ class CrawlingBlockApi(object):
 				total_outputs = 0
 				input_text = ''
 				output_text = ''
+				'''
 				if len(inputs) > 1:
 					continue
+				'''
 				for k in range(len(inputs)): 
 					#print(inputs[k]["prev_out"]["addr"])
 					print(inputs[k]["prev_out"]["value"])
-					input_addr.append(inputs[k]["prev_out"]["addr"])
+					try:
+						input_addr.append(inputs[k]["prev_out"]["addr"])
+					except:
+						input_addr.append(' ')
 					input_price.append(inputs[k]["prev_out"]["value"])
 					total_inputs = total_inputs + int(inputs[k]["prev_out"]["value"])
 				#print(total_inputs)
 				for t in range(len(out)):
-					print(out[t]["addr"])
-					output_addr.append(out[t]["addr"])
+					#print(out[t]["addr"])
+					try:
+						output_addr.append(out[t]["addr"])
+					except:
+						output_addr.append(' ')
 					output_price.append(out[t]["value"])
 					total_outputs = total_outputs + int(out[t]["value"])
 				total_inputs = round(decimal.Decimal(total_inputs) * decimal.Decimal(0.00000001), 8)
@@ -70,6 +77,7 @@ class CrawlingBlockApi(object):
 					output_text = output_text +  '{address: "' + output_addr[out_t] + '", BTC: "' + str(output_price[out_t]) +' BTC"}'
 					if out_t != len(output_addr) - 1:
 						output_text = output_text + ', '
+				print(input_text)
 				wr.writerow([t_hash, block, t_time, total_inputs, total_outputs, '[' + input_text + ']', '[' + output_text + ']'])
 			time.sleep(15)
 if __name__ == '__main__':
