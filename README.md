@@ -11,7 +11,7 @@ Inputs and outputs field will be formed like below.
 1. Crawling from Blockchain.com.
     - Access the [Blockchain.com](https://www.blockchain.com/explorer).
     - Find address that you want to get transaction information.
-    - Run crawling_blockchain.py.
+    - Run crawling_blockinfo.py.
     - Enter the address.
     - Enter pages. 
     (Pages = number of transactions / 50)
