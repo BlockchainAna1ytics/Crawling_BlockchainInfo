@@ -2,6 +2,11 @@
 
 Gaining Bitcoin Transaction information of address by Crawling [Blockchain.com](https://www.blockchain.com/explorer) or Using [API](https://www.blockchain.com/api) of Blockchain.com
 
+Gained information will be saved as .csv file.
+Fields are TXID, Block Number, Time, input BTC, output BTC, inputs, outputs.
+Inputs and outputs field will be formed like below.
+[{address: "$address", BTC: "$amount_of_BTC BTC"}, {address: "$address", BTC: "$amount_of_BTC BTC"}]
+
 ## How to Use
 1. Crawling from Blockchain.com.
     - Access the [Blockchain.com](https://www.blockchain.com/explorer).
