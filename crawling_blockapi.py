@@ -83,5 +83,5 @@ class CrawlingBlockApi(object):
 if __name__ == '__main__':
 	address = input('Enter Address: ')
 	page = input('Enter Pages: ')
-	a = CrawlingBlockApi('36kHDAojcv7rnenhSkcNw1vER1Qpx6axiq', 6)
+	a = CrawlingBlockApi(address, page)
 	a.get_blockinfo()
