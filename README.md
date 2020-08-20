@@ -30,6 +30,6 @@ Inputs and outputs fields will be formed like below.
 
 ## Notice
 - Second way is much faster than first way but if you send too many request, they may prohibit you from using API for couple of days.
-- If you want to use API without limitation, you have to request for [API key](https://api.blockchain.info/customer/signup).
+- If you want to use API without limitation, request for [API key](https://api.blockchain.info/customer/signup).
 - Using Jupyter Notebook or Sublime Text is recommended. (PyCharm may not work with BeautifulSoup)
-- If key 'addr' is not available in transaction, it will show as ' '.
+- If key 'addr' is not available in API, it will show as ' '.
