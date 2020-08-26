@@ -8,7 +8,7 @@ Inputs and outputs fields will be formed like below.
 ```  
 [{address: "$address", BTC: "$amount_of_BTC BTC"}, {address: "$address", BTC: "$amount_of_BTC BTC"}]
 ```
-## How to Use
+## How to Use:zap:
 1. Crawling from Blockchain.com.
     - Access the [Blockchain.com](https://www.blockchain.com/explorer).
     - Find address that you want to get transaction information.
